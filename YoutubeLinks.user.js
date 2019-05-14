@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        https://es.wikipedia.org/*
+// @match        https://*.wikipedia.org/*
 // @grant        none
 // @require http://code.jquery.com/jquery-3.3.1.min.js
 // ==/UserScript==
@@ -19,6 +19,7 @@ function getRequest(searchTerm) {
         part: 'snippet',
         key: 'AIzaSyDeuEVu90ExAcbBW6ycaZAQSHRhAJGd2D0',
         type: 'video',
+        maxResults: 6,
         q: searchTerm
     };
 
