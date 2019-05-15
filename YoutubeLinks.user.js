@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://*.wikipedia.org/*
+// @Exclude      https://es.wikipedia.org/wiki/Wikipedia:Portada
 // @grant        none
 // @require http://code.jquery.com/jquery-3.3.1.min.js
 // ==/UserScript==
