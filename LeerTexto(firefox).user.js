@@ -47,28 +47,15 @@ $(document).ready(function() {
 var timeoutResumeInfinity;
 
 function Read(message){
-    window.speechSynthesis.cancel();
-    clearTimeout(timeoutResumeInfinity);
     var reader = new SpeechSynthesisUtterance(message);
-    reader.onstart = function(event) {
-        resumeInfinity();
-    };
     reader.onend = function(event) {
-        clearTimeout(timeoutResumeInfinity);
         $('#cancel').css('visibility', 'hidden');
     };
     window.speechSynthesis.speak(reader);
     $('#cancel').css('visibility', 'visible');
 }
 
-function resumeInfinity() {
-    window.speechSynthesis.pause();
-    window.speechSynthesis.resume();
-    timeoutResumeInfinity = setTimeout(resumeInfinity, 10000);
-}
-
 function stopReading(){
     window.speechSynthesis.cancel();
-    clearTimeout(timeoutResumeInfinity);
     $('#cancel').css('visibility', 'hidden');
 }
